@@ -9,6 +9,14 @@ services:
     image: influxdb:2.7.6
     ports:
       - 8086:8086
+    environment:
+      DOCKER_INFLUXDB_INIT_MODE: setup
+      DOCKER_INFLUXDB_INIT_USERNAME: otknoy
+      DOCKER_INFLUXDB_INIT_PASSWORD: hogehoge
+      DOCKER_INFLUXDB_INIT_ORG: sandbox
+      DOCKER_INFLUXDB_INIT_BUCKET: test
+      DOCKER_INFLUXDB_INIT_RETENTION: 1w
+      DOCKER_INFLUXDB_INIT_ADMIN_TOKEN: my-super-secret-auth-token
     volumes:
       - ./docker-compose/influxdb/data:/var/lib/influxdb2
       - ./docker-compose/influxdb/config:/etc/influxdb2
