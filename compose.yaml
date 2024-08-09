@@ -6,7 +6,7 @@ services:
   #     APP_PORT: 9199
 
   influxdb:
-    image: influxdb:2.7.8
+    image: influxdb:2.7.9
     ports:
       - 8086:8086
     environment:
